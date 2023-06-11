@@ -40,9 +40,8 @@ def runtime_mesurement(print_results_condition = False):
             if print_results_condition:
                 print(f'Runing time of {func.__name__} is {delta_time} seconds.')
 
-            #returns results of the decorated function, in case if the decorated function returns something
-            if results:
-                return results
+            #returns results of the decorated function
+            return results
 
         return inner_wrapper
 
@@ -62,7 +61,7 @@ def timer_func(seconds, *args):
 
     Returns:
         return_before (int | float): result before timer, imitates 'code' before 'hard process'
-        return_before (int | float): result after timer, imitates 'code' after 'hard process'
+        return_after (int | float): result after timer, imitates 'code' after 'hard process'
     '''
 
     result_before_task = min(args)
